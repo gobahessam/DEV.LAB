@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEV.LAB - Разработка сайтов</title>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header__top">
+            <div class="ticker-wrap">
+                <div class="ticker">
+                    <span>🔥 Скидка 50% на разработку! &nbsp;&nbsp;&nbsp; 🚀 Проекты под ключ &nbsp;&nbsp;&nbsp; 💼 Работаем 24/7</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="header__info" id="headerInfo">
+            <div class="container header__info-container">
+                <div class="header__contacts">
+                    <span>📞 +7 (999) 000-00-00</span>
+                    <span>📍 краснодар, Сити</span>
+                </div>
+                <div class="header__socials">
+                    <a href="#">Telegram</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header__main">
+            <div class="container header__main-container">
+                <a href="#" class="logo">DEV<span class="logo__dot">.</span>LAB</a>
+                
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <nav class="nav" id="mainNav">
+                        <ul class="nav__list">
+                            <li><a href="#hero" class="nav__link">Главная</a></li>
+                            <li><a href="#about" class="nav__link">Преимущества</a></li>
+                            <li><a href="#showcase" class="nav__link">Витрина</a></li>
+                            <li><button class="btn btn--primary" data-modal-trigger="contact">Связаться</button></li>
+                        </ul>
+                    </nav>
+
+                    <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                        <svg class="icon-sun" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    </button>
+
+                    <button class="burger-btn" id="burgerBtn">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="hero">
+            <div class="hero__overlay"></div>
+            <div class="container hero__content">
+                <h1 class="hero__title">Цифровые решения<br>для вашего бизнеса</h1>
+                <p class="hero__subtitle">Создаем сайты, которые продают.</p>
+                <button class="btn btn--primary" onclick="document.querySelector('#showcase').scrollIntoView({behavior: 'smooth'})">Смотреть портфолио</button>
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Почему мы?</h2>
+                    <p>Наши ключевые преимущества</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">🚀</span>
+                        <h3>Скорость</h3>
+                        <p>Оптимизация загрузки страниц до 100/100 Google PageSpeed.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">📱</span>
+                        <h3>Адаптивность</h3>
+                        <p>Идеальное отображение на любых устройствах.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🛡️</span>
+                        <h3>Надежность</h3>
+                        <p>Безопасный код и защита персональных данных.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="showcase">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Наши проекты</h2>
+                    <div class="filters" id="showcaseFilters"></div>
+                </div>
+                <div class="catalog-grid" id="catalogGrid"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="mainFooter">
+        <div class="container footer-content">
+            <div>
+                <h3>DEV.LAB</h3>
+                <p style="opacity: 0.7; margin-top: 10px;">IT-решения будущего</p>
+            </div>
+            <div>
+                <p>© 2026 Все права защищены</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <button class="modal__close" id="modalCloseBtn">&times;</button>
+            
+            <h3 class="modal__title" id="modalTitle">Заявка</h3>
+            <p class="modal__text" id="modalText">Оставьте данные, и мы свяжемся с вами.</p>
+            
+            <form id="modalForm" novalidate>
+                <div class="input-group">
+                    <input type="text" id="inputName" placeholder="Ваше имя" required>
+                    <span class="error-msg">Пожалуйста, введите имя</span>
+                </div>
+                
+                <div class="input-group">
+                    <input type="tel" id="inputPhone" placeholder="+7 (999) 000-00-00" required>
+                    <span class="error-msg">Введите корректный номер телефона</span>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" id="inputEmail" placeholder="Ваш Email" required>
+                    <span class="error-msg">Введите корректный Email</span>
+                </div>
+
+                <div class="checkbox-group" id="consentGroup">
+                    <input type="checkbox" id="inputConsent" required>
+                    <label for="inputConsent">
+                        Я даю согласие на обработку <a href="#">персональных данных</a> в соответствии с политикой конфиденциальности.
+                    </label>
+                </div>
+                <div class="error-msg" id="consentError" style="position: relative; margin-top: 5px;">Необходимо согласие</div>
+
+                <button type="submit" class="btn btn--primary btn--full">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

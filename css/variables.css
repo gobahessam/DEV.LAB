@@ -1,0 +1,44 @@
+/* VARIABLES / ПЕРЕМЕННЫЕ
+   Настройка цветовой схемы и тем (Light/Dark)
+*/
+
+:root {
+    /* --- Базовые размеры и шрифты --- */
+    --container-width: 1240px;
+    --h-top: 40px;
+    --h-info: 40px;
+    --h-main: 70px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --border-radius: 12px;
+
+    /* --- ЦВЕТОВАЯ ПАЛИТРА (Light Theme - Default) --- */
+    --bg-body: #F8F9FA;
+    --bg-card: #FFFFFF;
+    --bg-header-blur: rgba(255, 255, 255, 0.85);
+    
+    --text-main: #1A1A1A;
+    --text-secondary: #6C757D;
+    --text-inverse: #FFFFFF;
+
+    --color-primary: #2563EB;
+    --color-primary-hover: #1D4ED8;
+    --color-danger: #EF4444;
+    
+    --border-color: #E9ECEF;
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- DARK THEME (ТЕМНАЯ ТЕМА) --- */
+[data-theme="dark"] {
+    --bg-body: #111827;        /* Темный фон */
+    --bg-card: #1F2937;        /* Темные карточки */
+    --bg-header-blur: rgba(31, 41, 55, 0.85);
+    
+    --text-main: #F9FAFB;      /* Светлый текст */
+    --text-secondary: #9CA3AF; /* Серый текст */
+    
+    --border-color: #374151;
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.4);
+}
